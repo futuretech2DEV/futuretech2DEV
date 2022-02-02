@@ -1,0 +1,7 @@
+Este aquivo pode ser qualquer coisa na realidade, visto que nada foi completamente especificado. E considerando o comando cat -e a, como este exibe de forma correta a chamadda do episodio IV, não tendo na a remover nem acrescentar.
+
+Desde que este arquivo seja completamente diferente em suas linhas.
+
+Quando executarmos o comando diff a b > sw.diff ele irá gerar um aqui com as diferenças e quando fizermos o patch no arquovo b ele aplicara todos o conteudo do a em b
+
+espero estar certo.
