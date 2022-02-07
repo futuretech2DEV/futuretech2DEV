@@ -10,42 +10,47 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
 void	rush(int, int, const char *);
+int 	littleAtoi(char* str)
+{
+    int resultado = 0;
+    int i = 0;
+    while(str[i] != '\0'){
+        if (str[i] >= '0' && str[i] <= '9') {
+                resultado = resultado * 10 + str[i] - '0';
+                i++;
+}
+}
 
-// const char *rush00 = "oooo-|";
-// const char *rush01 = "/\\\\/**|";
-// const char *rush02 = "AACCBB";
-// const char *rush03 = "ACACBB";
-// const char *rush04 = "ACCABB";
+    return resultado;
+}
 
+const int NEX = 5;
+const char rushes[NEX][7] = {"oooo-|", "/\\\\/**|", "AACCBB", "ACACBB", "ACCABB"};
 
 int	main(int argc, char *argv[])
 {
-	// rush(5, 5, rush00);
-	// rush(5, 5, rush01);
-	// rush(5, 5, rush02);
-	// rush(5, 5, rush03);
-	// rush(5, 3, rush04);
-	// rush(5, 1, rush04);
-	// rush(1, 1, rush04);
-	// rush(1, 5, rush04);
-	// rush(4, 4, rush04);
-	// rush(5, 5, rush04);
 
-
-	if (argc > 1) {
+	if (argc == 4) {
 		int nc;
-		char *dados;
+		int exN;
+		char *dados, *cx, *cy;
 		
 		nc = 0;
-		dados = argv[1];
-		
+		cx = argv[1];
+		cy = argv[2];
+		dados = argv[3];
+	
 		while(dados[nc] != '\0')
 			nc++;
 
-		if (nc == 6)
-			rush(5,5, dados);
+		if (nc == 1)
+			rush(littleAtoi(cx), littleAtoi(cy), rushes[littleAtoi(dados)]);
 
+		if (nc == 6)
+			rush(littleAtoi(cx), littleAtoi(cy), dados);
 	} 
 	
 	return (0);
