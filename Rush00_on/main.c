@@ -35,7 +35,6 @@ int	main(int argc, char *argv[])
 
 	if (argc == 4) {
 		int nc;
-		int exN;
 		char *dados, *cx, *cy;
 		
 		nc = 0;
