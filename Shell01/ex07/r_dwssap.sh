@@ -1,17 +1,6 @@
-#cat /etc/passwd \
-#  | sed '/^#/d' \
-#  | awk 'NR >= 2 && NR % 2 == 0 {print $0}' \
-#  | awk -F ":" '{  print $1 }' \
-#  | rev \
-#  | sort -dr \
-#  | awk -v FT_LINE1="$FT_LINE1" -v FT_LINE2="$FT_LINE2"  'NR >= FT_LINE1 && NR <= FT_LINE2 { print $0 }' \
-#  | tr '\n' ' '  \
-#  | sed 's+ +, +g' \
-#  | sed 's+, $+.+g' \
-#  | tr -d '\n'
 cat /etc/passwd | sed '/^#/d' | awk "NR % 2 == 0" | awk -F ":" '{  print $1 }' | rev | sort -fnr \
-|awk 'FNR >= FT_LINE1 && FNR <= FT_LINE2 { print $0 }'
-#| tr '\n' ' '  \
+|awk 'FNR >= 7 && FNR <= 15' 
+#| tr '\n' ' ' 
 #| sed 's+ +, +g' \
 #| sed 's+, $+.+g' \
 #| tr -d '\n'
